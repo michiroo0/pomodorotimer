@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポモドーロタイマー</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ポモドーロタイマー</h1>
+        <div class="timer-container">
+            <div class="time-display" id="timeDisplay">25:00</div>
+            <div class="controls">
+                <button id="startBtn">開始</button>
+                <button id="stopBtn">停止</button>
+                <button id="resetBtn">リセット</button>
+            </div>
+        </div>
+        <div class="session-controls">
+            <label>
+                ポモドーロ時間: 
+                <input type="number" id="pomodoroTime" value="25" min="1" max="60">
+                分
+            </label>
+            <label>
+                休憩時間: 
+                <input type="number" id="breakTime" value="5" min="1" max="60">
+                分
+            </label>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
