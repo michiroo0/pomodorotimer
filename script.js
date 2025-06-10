@@ -20,7 +20,10 @@ class PomodoroTimer {
     initializeEventListeners() {
         this.startBtn.addEventListener('click', () => this.startTimer());
         this.stopBtn.addEventListener('click', () => this.stopTimer());
-        this.resetBtn.addEventListener('click', () => this.resetTimer());
+        this.resetBtn.addEventListener('click', () => {
+            this.resetTimer();
+            this.updateDisplay();
+        });
         this.pomodoroTimeInput.addEventListener('change', () => this.updateTime());
         this.breakTimeInput.addEventListener('change', () => this.updateTime());
     }
@@ -60,10 +63,12 @@ class PomodoroTimer {
     }
 
     resetTimer() {
-        this.stopTimer();
-        this.timeLeft = parseInt(this.pomodoroTimeInput.value) * 60;
+        this.isRunning = false;
+        if (this.currentTimer) {
+            clearInterval(this.currentTimer);
+        }
+        this.timeLeft = 25 * 60; // デフォルトの25分にリセット
         this.sessionType = 'work';
-        this.updateDisplay();
     }
 
     updateDisplay() {
