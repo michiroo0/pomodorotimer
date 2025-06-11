@@ -16,6 +16,16 @@
                 <button id="stopBtn">停止</button>
                 <button id="resetBtn">リセット</button>
             </div>
+            <div class="settings">
+                <div class="setting-item">
+                    <label for="pomodoroTime">作業時間（分）:</label>
+                    <input type="number" id="pomodoroTime" value="25" min="1" max="60">
+                </div>
+                <div class="setting-item">
+                    <label for="breakTime">休憩時間（分）:</label>
+                    <input type="number" id="breakTime" value="5" min="1" max="60">
+                </div>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
